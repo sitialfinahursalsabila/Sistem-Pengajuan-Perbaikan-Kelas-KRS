@@ -1,0 +1,6 @@
+.ts{overflow-x:auto}table{width:100%;border-collapse:collapse;min-width:620px}
+th{background:var(--b);color:#fff;text-align:left;padding:9px 10px;font-size:12.5px}td{padding:9px 10px;border-bottom:1px solid var(--ln);vertical-align:top}tr:nth-child(even) td{background:#f7faff}
+.bd{display:inline-block;padding:2px 10px;border-radius:99px;font-size:12px;font-weight:600}
+.w{background:#fff3d1;color:#9a6c00}.a{background:#e1f4e9;color:var(--ok)}.d{background:#fde6e6;color:var(--no)}.p{background:#e3ecfb;color:var(--b)}
+.rd~.b1,.rd~.b2{display:none}.ok:checked~.b0,.no:checked~.b0{display:none}.ok:checked~.b1{display:inline-block}.no:checked~.b2{display:inline-block}
+.rd{position:absolute;opacity:0}

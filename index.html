@@ -1,0 +1,615 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Sistem Pengajuan Perbaikan Kelas KRS</title>
+    <link rel="stylesheet" href="css/01-base.css" />
+    <link rel="stylesheet" href="css/02-header.css" />
+    <link rel="stylesheet" href="css/03-layout.css" />
+    <link rel="stylesheet" href="css/04-components.css" />
+    <link rel="stylesheet" href="css/05-tables.css" />
+    <link rel="stylesheet" href="css/06-widgets.css" />
+    <link rel="stylesheet" href="css/07-roles.css" />
+    <link rel="stylesheet" href="css/08-login.css" />
+    <link rel="stylesheet" href="css/09-identity.css" />
+    <link rel="stylesheet" href="css/10-access.css" />
+    <link rel="stylesheet" href="css/11-footer.css" />
+    <link rel="stylesheet" href="css/99-responsive.css" />
+  </head>
+  <body>
+    <input class="x" type="radio" name="role" id="r1" checked /><input
+      class="x"
+      type="radio"
+      name="role"
+      id="r2"
+    /><input class="x" type="radio" name="role" id="r3" />
+    <input class="x" type="radio" name="pg" id="a1" checked /><input
+      class="x"
+      type="radio"
+      name="pg"
+      id="a2"
+    /><input class="x" type="radio" name="pg" id="a3" /><input
+      class="x"
+      type="radio"
+      name="pg"
+      id="a4"
+    /><input class="x" type="radio" name="pg" id="a5" /><input
+      class="x"
+      type="radio"
+      name="pg"
+      id="a6"
+    /><input class="x" type="radio" name="pg" id="a7" />
+    <input class="x" type="radio" name="auth" id="in0" checked /><input
+      class="x"
+      type="radio"
+      name="auth"
+      id="in1"
+    /><input class="x" type="radio" name="usr" id="u1" /><input
+      class="x"
+      type="radio"
+      name="usr"
+      id="u2"
+    /><input class="x" type="radio" name="usr" id="u3" checked /><input
+      class="x"
+      type="radio"
+      name="usr"
+      id="u4"
+    /><input class="x" type="checkbox" id="per" /><input
+      class="x"
+      type="checkbox"
+      id="sent"
+    />
+    <header>
+      <div class="lg">UIN</div>
+      <h1>
+        Sistem Pengajuan Perbaikan Kelas KRS<small
+          >Program Studi Teknik Informatika · UIN Maulana Malik Ibrahim
+          Malang</small
+        >
+      </h1>
+      <div class="usr">
+        <span
+          ><span class="n1">Siti Alfinahur Salsabila · Mahasiswa</span
+          ><span class="n2">Dosen Pembimbing Akademik</span
+          ><span class="n3">Admin Program Studi</span></span
+        ><label for="in0">Keluar</label>
+      </div>
+    </header>
+    <section class="lgn">
+      <div class="lc">
+        <div class="lp">
+          <div class="lg">UIN</div>
+          <h2>Sistem Pengajuan Perbaikan Kelas KRS</h2>
+          <p>
+            Satu sistem online terpusat, menggantikan Google Form via WhatsApp
+            dan laporan langsung ke admin.
+          </p>
+          <ul>
+            <li>Ajukan perbaikan KRS secara online</li>
+            <li>Pantau status tanpa tatap muka</li>
+            <li>Diverifikasi Dosen PA &amp; Admin Prodi</li>
+          </ul>
+        </div>
+        <div class="lf">
+          <h3>Masuk</h3>
+          <p>Silakan pilih peran dan masukkan kredensial akun Anda.</p>
+          <div class="rc">
+            <label for="r1">Mahasiswa</label><label for="r2">Dosen PA</label
+            ><label for="r3">Admin Prodi</label>
+          </div>
+          <div class="fl">
+            <label>NIM / Username</label>
+            <div class="ro">
+              <span class="n1">240605110144</span
+              ><span class="n2">dosen.pa</span
+              ><span class="n3">admin.prodi</span>
+            </div>
+          </div>
+          <div class="fl" style="margin-top: 10px">
+            <label>Kata sandi</label>
+            <div class="ro">••••••••••</div>
+            <div style="font-size: 12px; color: var(--mut); margin-top: 5px">
+              Kata sandi:
+              <b
+                ><span class="n1">krs2026</span
+                ><span class="n2">dosenpa2026</span
+                ><span class="n3">admin2026</span></b
+              >
+            </div>
+          </div>
+          <label class="btn" for="in1">Masuk</label>
+          <p style="font-size: 12px; color: var(--mut); margin: 12px 0 0">
+            Catatan: ini merupakan prototipe. Kolom kredensial tidak divalidasi
+            dan hak akses mengikuti peran yang dipilih.
+          </p>
+        </div>
+      </div>
+    </section>
+    <div class="wrap">
+      <aside>
+        <div class="menu">
+          <h4>MENU UTAMA</h4>
+          <label for="a1">Beranda</label>
+          <label class="m" for="a2">Form Pengajuan</label>
+          <label class="m" for="a3">Status Pengajuan</label>
+          <label class="s" for="a4">Verifikasi Pengajuan</label>
+          <label class="s" for="a5">Rekap dan Statistik</label>
+          <label class="s adm" for="a6">⚙️ Periode KRS</label>
+          <label for="a7">Panduan dan FAQ</label>
+        </div>
+      </aside>
+      <main>
+        <div class="ban bo">
+          Periode perbaikan KRS sedang dibuka. Pengajuan dapat disampaikan.
+        </div>
+        <div class="ban bc">
+          Periode perbaikan KRS telah ditutup. Pengajuan tidak dapat dilakukan.
+        </div>
+        <section class="pg" id="deny">
+          <div class="card">
+            <h2>Akses Ditolak</h2>
+            <p class="sub">
+              Peran Anda tidak memiliki izin untuk membuka halaman ini.
+            </p>
+            <label class="btn" for="a1">Kembali ke Beranda</label>
+          </div>
+        </section>
+        <section class="pg" id="P1">
+          <div class="card">
+            <h2>Beranda</h2>
+            <p class="sub">
+              Selamat datang pada Sistem Pengajuan Perbaikan Kelas Kartu Rencana
+              Studi (KRS).
+            </p>
+            <div class="gm">
+              <div class="prof">
+                <div class="av">
+                  <span class="a1">K</span><span class="a2">A</span
+                  ><span class="a3">S</span><span class="a4">S</span>
+                </div>
+                <dl>
+                  <dt>Nama</dt>
+                  <dd>
+                    <span class="w1">Kurnia Salwa Zakia</span
+                    ><span class="w2">Arfa'izza Rayhani Azzahra</span
+                    ><span class="w3">Siti Alfinahur Salsabila</span
+                    ><span class="w4">Sarafina Saquita</span>
+                  </dd>
+                  <dt>NIM</dt>
+                  <dd>
+                    <span class="v1">240605110033</span
+                    ><span class="v2">240605110130</span
+                    ><span class="v3">240605110144</span
+                    ><span class="v4">240605110145</span>
+                  </dd>
+                  <dt>Program Studi</dt>
+                  <dd>Teknik Informatika</dd>
+                  <dt>Fakultas</dt>
+                  <dd>Sains dan Teknologi</dd>
+                  <dt>Dosen PA</dt>
+                  <dd>Dosen Pembimbing Akademik</dd>
+                </dl>
+              </div>
+            </div>
+            <div class="gs">
+              <div class="prof">
+                <div class="av">P</div>
+                <dl>
+                  <dt>Username</dt>
+                  <dd>
+                    <span class="n2">dosen.pa</span
+                    ><span class="n3">admin.prodi</span>
+                  </dd>
+                  <dt>Peran</dt>
+                  <dd>
+                    <span class="n2">Dosen Pembimbing Akademik</span
+                    ><span class="n3">Admin Program Studi</span>
+                  </dd>
+                  <dt>Program Studi</dt>
+                  <dd>Teknik Informatika</dd>
+                  <dt>Fakultas</dt>
+                  <dd>Sains dan Teknologi</dd>
+                  <dt>Tugas</dt>
+                  <dd>Meninjau &amp; memverifikasi pengajuan</dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+          <div class="gm g4">
+            <div class="sc"><b>4</b><span>Total pengajuan saya</span></div>
+            <div class="sc"><b>1</b><span>Menunggu</span></div>
+            <div class="sc"><b>2</b><span>Disetujui</span></div>
+            <div class="sc"><b>1</b><span>Ditolak</span></div>
+          </div>
+          <div class="gs g4">
+            <div class="sc"><b>48</b><span>Pengajuan masuk</span></div>
+            <div class="sc"><b>12</b><span>Perlu ditinjau</span></div>
+            <div class="sc"><b>31</b><span>Disetujui</span></div>
+            <div class="sc"><b>5</b><span>Ditolak</span></div>
+          </div>
+          <div class="card">
+            <div class="tt">Pengumuman</div>
+            <div class="ann">
+              <b>Masa perbaikan KRS</b><br />Pengajuan hanya diterima selama
+              jadwal perbaikan KRS yang berlaku.
+            </div>
+            <div class="ann">
+              <b>Bukti wajib</b><br />Unggah screenshot KRS agar pengajuan dapat
+              diverifikasi.
+            </div>
+          </div>
+        </section>
+        <section class="pg" id="P2">
+          <div class="card">
+            <h2>Form Pengajuan Perbaikan KRS</h2>
+            <p class="sub">
+              Lengkapi data pengajuan dan unggah bukti tangkapan layar KRS.
+            </p>
+            <div class="fm">
+              <div class="f2">
+                <div class="fl">
+                  <label>NIM</label>
+                  <div class="ro">
+                    <span class="v1">240605110033</span
+                    ><span class="v2">240605110130</span
+                    ><span class="v3">240605110144</span
+                    ><span class="v4">240605110145</span>
+                  </div>
+                </div>
+                <div class="fl">
+                  <label>Jenis Pengajuan</label
+                  ><select>
+                    <option>Perbaikan kelas</option>
+                    <option>Penambahan kelas</option>
+                  </select>
+                </div>
+                <div class="fl">
+                  <label>Mata Kuliah</label
+                  ><select>
+                    <option>Struktur Data</option>
+                    <option>Mobile Programming</option>
+                    <option>Grafika Komputer</option>
+                    <option>Basis Data</option>
+                  </select>
+                </div>
+                <div class="fl">
+                  <label>Alasan</label
+                  ><select>
+                    <option>Jadwal bentrok</option>
+                    <option>Kuota kelas penuh</option>
+                    <option>Mengulang nilai</option>
+                    <option>Kesalahan input KRS</option>
+                  </select>
+                </div>
+              </div>
+              <div class="fl" style="margin-top: 12px">
+                <label>Keterangan tambahan</label
+                ><textarea
+                  rows="3"
+                  placeholder="Uraikan alasan pengajuan"
+                ></textarea>
+              </div>
+              <div class="fl" style="margin-top: 12px">
+                <label>Bukti screenshot KRS</label
+                ><input class="i" type="file" accept="image/*" />
+              </div>
+              <p>
+                <input type="checkbox" id="ck" />
+                <label for="ck" style="display: inline; font-weight: 400"
+                  >Saya menyatakan bahwa data yang disampaikan adalah
+                  benar.</label
+                >
+              </p>
+              <label class="btn" for="sent">Kirim Pengajuan</label>
+              <label class="btn o" for="a3">Lihat Status Pengajuan</label>
+            </div>
+            <div class="al">
+              Pengajuan berhasil dikirim. Status dapat dipantau pada menu Status
+              Pengajuan.
+            </div>
+          </div>
+        </section>
+        <section class="pg" id="P3">
+          <div class="card">
+            <h2>Status Pengajuan</h2>
+            <p class="sub">
+              Pantau perkembangan pengajuan secara daring tanpa tatap muka
+              dengan Dosen PA atau Admin Prodi.
+            </p>
+            <div class="ts">
+              <table>
+                <tr>
+                  <th>Tanggal</th>
+                  <th>Mata Kuliah</th>
+                  <th>Alasan</th>
+                  <th>Status</th>
+                  <th>Catatan</th>
+                </tr>
+                <tr>
+                  <td>09 Okt 2026</td>
+                  <td>Grafika Komputer</td>
+                  <td>Mengulang nilai</td>
+                  <td><span class="bd p">Diajukan</span></td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>08 Okt 2026</td>
+                  <td>Struktur Data</td>
+                  <td>Jadwal bentrok</td>
+                  <td><span class="bd w">Ditinjau</span></td>
+                  <td>Menunggu Dosen PA</td>
+                </tr>
+                <tr>
+                  <td>07 Okt 2026</td>
+                  <td>Mobile Programming</td>
+                  <td>Kuota penuh</td>
+                  <td><span class="bd a">Disetujui</span></td>
+                  <td>Ambil kelas B</td>
+                </tr>
+                <tr>
+                  <td>06 Okt 2026</td>
+                  <td>Basis Data</td>
+                  <td>Salah input</td>
+                  <td><span class="bd d">Ditolak</span></td>
+                  <td>Bukti kurang jelas</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class="card">
+            <div class="tt">Lacak: Struktur Data</div>
+            <div class="tl">
+              <div class="on">Diajukan</div>
+              <div class="on">Diperiksa Admin</div>
+              <div class="on">Ditinjau PA</div>
+              <div>Keputusan</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="tt">Lacak: Basis Data</div>
+            <div class="tl">
+              <div class="on">Diajukan</div>
+              <div class="on">Diperiksa Admin</div>
+              <div class="on">Ditinjau PA</div>
+              <div class="no2 on">Ditolak</div>
+            </div>
+          </div>
+        </section>
+        <section class="pg" id="P4">
+          <div class="card">
+            <h2>Verifikasi Pengajuan</h2>
+            <p class="sub">
+              Tinjau, setujui, atau tolak pengajuan. Keputusan akademik tetap di
+              tangan Dosen PA.
+            </p>
+            <div class="ts">
+              <table>
+                <tr>
+                  <th>Mahasiswa</th>
+                  <th>Pengajuan</th>
+                  <th>Bukti</th>
+                  <th>Status</th>
+                  <th>Keputusan</th>
+                </tr>
+                <tr>
+                  <td><b>Rafi Ahmad</b><br />240605110021</td>
+                  <td>Struktur Data<br />Jadwal bentrok</td>
+                  <td>krs_rafi.png</td>
+                  <td>
+                    <input
+                      type="radio"
+                      class="rd ok"
+                      name="d1"
+                      id="d1a"
+                    /><input
+                      type="radio"
+                      class="rd no"
+                      name="d1"
+                      id="d1b"
+                    /><span class="bd w b0">Menunggu</span
+                    ><span class="bd a b1">Disetujui</span
+                    ><span class="bd d b2">Ditolak</span>
+                  </td>
+                  <td>
+                    <input
+                      class="i"
+                      placeholder="Catatan"
+                      style="margin-bottom: 6px"
+                    /><label class="btn g sm" for="d1a">Setujui</label>
+                    <label class="btn r sm" for="d1b">Tolak</label>
+                  </td>
+                </tr>
+                <tr>
+                  <td><b>Dinda Putri</b><br />240605110052</td>
+                  <td>Mobile Programming<br />Kuota penuh</td>
+                  <td>krs_dinda.png</td>
+                  <td>
+                    <input
+                      type="radio"
+                      class="rd ok"
+                      name="d2"
+                      id="d2a"
+                    /><input
+                      type="radio"
+                      class="rd no"
+                      name="d2"
+                      id="d2b"
+                    /><span class="bd w b0">Menunggu</span
+                    ><span class="bd a b1">Disetujui</span
+                    ><span class="bd d b2">Ditolak</span>
+                  </td>
+                  <td>
+                    <input
+                      class="i"
+                      placeholder="Catatan"
+                      style="margin-bottom: 6px"
+                    /><label class="btn g sm" for="d2a">Setujui</label>
+                    <label class="btn r sm" for="d2b">Tolak</label>
+                  </td>
+                </tr>
+                <tr>
+                  <td><b>Bima Pratama</b><br />240605110087</td>
+                  <td>Basis Data<br />Salah input KRS</td>
+                  <td>krs_bima.png</td>
+                  <td>
+                    <input
+                      type="radio"
+                      class="rd ok"
+                      name="d3"
+                      id="d3a"
+                    /><input
+                      type="radio"
+                      class="rd no"
+                      name="d3"
+                      id="d3b"
+                    /><span class="bd w b0">Menunggu</span
+                    ><span class="bd a b1">Disetujui</span
+                    ><span class="bd d b2">Ditolak</span>
+                  </td>
+                  <td>
+                    <input
+                      class="i"
+                      placeholder="Catatan"
+                      style="margin-bottom: 6px"
+                    /><label class="btn g sm" for="d3a">Setujui</label>
+                    <label class="btn r sm" for="d3b">Tolak</label>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </section>
+        <section class="pg" id="P5">
+          <div class="card">
+            <h2>Rekap &amp; Statistik Pengajuan</h2>
+            <p class="sub">
+              Ringkasan data pengajuan sebagai bahan pertimbangan program studi.
+            </p>
+            <div class="f2">
+              <div>
+                <div class="tt">Per mata kuliah</div>
+                <div class="bar">
+                  <span>Struktur Data</span><i style="width: 75%"></i
+                  ><em>18</em>
+                </div>
+                <div class="bar">
+                  <span>Mobile Programming</span><i style="width: 55%"></i
+                  ><em>13</em>
+                </div>
+                <div class="bar">
+                  <span>Basis Data</span><i style="width: 40%"></i><em>10</em>
+                </div>
+                <div class="bar">
+                  <span>Grafika Komputer</span><i style="width: 29%"></i
+                  ><em>7</em>
+                </div>
+                <div class="tt" style="margin-top: 18px">Alasan terbanyak</div>
+                <div class="bar">
+                  <span>Jadwal bentrok</span><i style="width: 70%"></i
+                  ><em>20</em>
+                </div>
+                <div class="bar">
+                  <span>Kuota penuh</span><i style="width: 45%"></i><em>13</em>
+                </div>
+                <div class="bar">
+                  <span>Mengulang nilai</span><i style="width: 30%"></i
+                  ><em>9</em>
+                </div>
+              </div>
+              <div>
+                <div class="tt">Status keputusan</div>
+                <div class="donut"></div>
+                <div class="lgd">
+                  <b style="background: var(--ok)"></b>Disetujui 40%
+                  <b style="background: var(--b3)"></b>Ditinjau 25%
+                  <b style="background: var(--wr)"></b>Diajukan 20%
+                  <b style="background: var(--no)"></b>Ditolak 15%
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="pg" id="P6">
+          <div class="card">
+            <h2>Pengaturan Periode KRS</h2>
+            <p class="sub">
+              Sistem hanya menerima pengajuan saat periode dibuka.
+            </p>
+            <label class="sw" for="per"
+              ><i></i><span>Geser untuk membuka/menutup periode</span></label
+            >
+            <div class="ann" style="margin-top: 16px">
+              Saat ditutup, form pengajuan mahasiswa terkunci otomatis.
+            </div>
+          </div>
+        </section>
+        <section class="pg" id="P7">
+          <div class="card">
+            <h2>Panduan &amp; FAQ</h2>
+            <p class="sub">User manual singkat untuk mahasiswa dan Dosen PA.</p>
+            <details open>
+              <summary>Bagaimana alur pengajuan?</summary>
+              <div>
+                Mahasiswa mengisi form → Admin memeriksa administrasi → Dosen PA
+                memutuskan → status tampil otomatis.
+              </div>
+            </details>
+            <details>
+              <summary>Bukti apa yang harus diunggah?</summary>
+              <div>
+                Screenshot KRS yang menunjukkan mata kuliah dan kelas yang
+                diajukan.
+              </div>
+            </details>
+            <details>
+              <summary>Kenapa form saya terkunci?</summary>
+              <div>
+                Periode perbaikan KRS sedang ditutup. Tunggu jadwal berikutnya.
+              </div>
+            </details>
+            <details>
+              <summary>Apakah sistem memutuskan otomatis?</summary>
+              <div>
+                Tidak. Keputusan akademik tetap dilakukan Dosen PA atau pihak
+                berwenang.
+              </div>
+            </details>
+          </div>
+        </section>
+      </main>
+    </div>
+    <footer>
+      <div class="ft-in">
+        <div>
+          <h5>Sistem Pengajuan Perbaikan Kelas KRS</h5>
+          <p>
+            Program Studi Teknik Informatika<br />Fakultas Sains dan
+            Teknologi<br />Universitas Islam Negeri Maulana Malik Ibrahim Malang
+          </p>
+        </div>
+        <div>
+          <h5>Mata Kuliah</h5>
+          <p>Project Management, Tugas Minggu 1</p>
+          <p>Dosen Pengampu:<br />Prof. Dr. H. Muhammad Faisal, S.Kom, M.T</p>
+        </div>
+        <div>
+          <h5>Disusun oleh Kelompok 4</h5>
+          <ul>
+            <li>Kurnia Salwa Zakia (240605110033)</li>
+            <li>Arfa'izza Rayhani Azzahra (240605110130)</li>
+            <li>Siti Alfinahur Salsabila (240605110144)</li>
+            <li>Sarafina Saquita (240605110145)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="ft-bot">
+        &copy; 2026 Program Studi Teknik Informatika, UIN Maulana Malik Ibrahim
+        Malang. Seluruh hak dilindungi.
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,7 @@
+{
+  "name": "krs-pengajuan",
+  "private": true,
+  "scripts": {
+    "build:html": "node build.mjs"
+  }
+}

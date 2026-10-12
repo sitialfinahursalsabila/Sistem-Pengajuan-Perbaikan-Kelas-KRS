@@ -1,0 +1,11 @@
+.wrap{display:flex;max-width:1180px;margin:0 auto;gap:16px;padding:16px}
+aside{width:230px;flex:none}.menu{background:#fff;border:1px solid var(--ln);border-radius:10px;overflow:hidden}
+.menu h4{margin:0;background:var(--b);color:#fff;padding:10px 14px;font-size:13px;letter-spacing:.5px}
+.menu label{display:block;padding:11px 14px;border-bottom:1px solid var(--bl);cursor:pointer;color:var(--tx)}
+.menu label:hover{background:var(--bl)}
+main{flex:1;min-width:0}
+.pg{display:none}
+#a1:checked~.wrap #P1,#a2:checked~.wrap #P2,#a3:checked~.wrap #P3,#a4:checked~.wrap #P4,#a5:checked~.wrap #P5,#a6:checked~.wrap #P6,#a7:checked~.wrap #P7{display:block}
+#a1:checked~.wrap [for=a1],#a2:checked~.wrap [for=a2],#a3:checked~.wrap [for=a3],#a4:checked~.wrap [for=a4],#a5:checked~.wrap [for=a5],#a6:checked~.wrap [for=a6],#a7:checked~.wrap [for=a7]{background:var(--bl);color:var(--b);font-weight:600;border-left:4px solid var(--b)}
+#r1:checked~.wrap .s,#r2:checked~.wrap .m,#r3:checked~.wrap .m,#r2:checked~.wrap .adm,#r1:checked~.wrap .gs{display:none}
+#r1:checked~.wrap .gm,#r2:checked~.wrap .gs,#r3:checked~.wrap .gs{display:block}.gs{display:none}

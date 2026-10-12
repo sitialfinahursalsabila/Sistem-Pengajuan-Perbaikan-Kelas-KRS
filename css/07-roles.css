@@ -1,0 +1,5 @@
+.n1,.n2,.n3{display:none}#r1:checked~* .n1,#r2:checked~* .n2,#r3:checked~* .n3{display:inline}
+#r2:checked~.wrap .gm,#r3:checked~.wrap .gm{display:none}
+#r1:checked~.wrap .g4.gm,#r2:checked~.wrap .g4.gs,#r3:checked~.wrap .g4.gs{display:grid}
+.usr{display:none;align-items:center;gap:12px;font-size:13px}.usr label{background:#fff;color:var(--b);padding:5px 14px;border-radius:6px;cursor:pointer;font-weight:600}
+#in1:checked~header .usr{display:flex}

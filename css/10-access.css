@@ -1,0 +1,2 @@
+#r1:checked~.wrap :is(#P4,#P5,#P6),#r2:checked~.wrap :is(#P2,#P3,#P6),#r3:checked~.wrap :is(#P2,#P3){display:none!important}
+#r1:checked~:is(#a4,#a5,#a6):checked~.wrap #deny,#r2:checked~:is(#a2,#a3,#a6):checked~.wrap #deny,#r3:checked~:is(#a2,#a3):checked~.wrap #deny{display:block!important}

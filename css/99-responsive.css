@@ -1,0 +1,1 @@
+@media(max-width:800px){.wrap{flex-direction:column}aside{width:100%}.menu{display:flex;overflow-x:auto}.menu h4{display:none}.menu label{white-space:nowrap;border-bottom:0}.prof{grid-template-columns:1fr}}

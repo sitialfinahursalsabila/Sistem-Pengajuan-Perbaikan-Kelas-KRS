@@ -1,0 +1,6 @@
+header{background:linear-gradient(90deg,var(--b2),var(--b));color:#fff;display:flex;align-items:center;gap:12px;padding:10px 20px;flex-wrap:wrap;border-bottom:4px solid #f2c230}
+.lg{width:40px;height:40px;border-radius:50%;background:#fff;color:var(--b);display:grid;place-items:center;font-weight:800}
+header h1{margin:0;font-size:17px;flex:1;min-width:180px}header h1 small{display:block;font-weight:400;font-size:11px;opacity:.85}
+.roles{display:flex;gap:4px;background:rgba(255,255,255,.15);padding:3px;border-radius:8px}
+.roles label{padding:5px 12px;border-radius:6px;cursor:pointer;font-size:13px}
+#r1:checked~header .l1,#r2:checked~header .l2,#r3:checked~header .l3{background:#fff;color:var(--b);font-weight:600}
